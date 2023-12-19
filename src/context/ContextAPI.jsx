@@ -10,17 +10,16 @@ const ContextProvider = ({ children }) => {
       const res = await fetch(url);
       const data = await res.json();
 
-      // Asegúrate de que data tenga la propiedad 'results'
       if (data.results) {
         console.log(data);
         return data;
       } else {
         console.error('Los datos de la API no tienen la propiedad "results".', data);
-        return { results: [] }; // Retorna un objeto vacío si 'results' no está presente
+        return { results: [] }; 
       }
     } catch (err) {
       console.log("Error al traer los datos de la API", err);
-      return { results: [] }; // Retorna un objeto vacío en caso de error
+      return { results: [] }; 
     }
   };
 
